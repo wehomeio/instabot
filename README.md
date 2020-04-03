@@ -30,7 +30,7 @@ pip install dist/instabot-0.117.0-py2-none-any.whl
 
 ### Quickstart
 
-How to upload photo with tagged user?
+#### How to upload photo with tagged user?
 ```angular2html
 import instabot
 
@@ -43,6 +43,12 @@ caption = "some caption"
 
 bot.upload_photo(pic_path,caption=caption,user_tags=user_tags)
 ```
+
+#### How to change password?
+```angular2html
+bot.api.change_password("xxx")
+```
+How to intercept package traffic?  [look here](https://github.com/aliforever/charles-proxy-instagram-requests)
 
 # Terms and conditions
 * You will NOT use this API for marketing purposes (spam, botting, harassment, massive bulk messaging...).
