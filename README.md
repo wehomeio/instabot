@@ -23,22 +23,26 @@ Right now the usage of this library (as probably others too) may harm your Insta
 ### Installation
 Install `instabot` with:
 ``` bash
-pip install -U instabot
+pip install dist/instabot-0.117.0-py2-none-any.whl
 ```
 
 #### or check [this](https://instagrambot.github.io/docs/en/#installation) for more details.
 
 ### Quickstart
 
-<img src="https://user-images.githubusercontent.com/5613295/62396780-b6441c80-b57c-11e9-89b0-931c159f0cab.png" width="400">
+How to upload photo with tagged user?
+```angular2html
+import instabot
 
-Instabot has a lot of predefined filters (like skipping very popular accounts because they will not notice you) which maximizes the overall impact. But you can remove them if you like or even set your parameters: (full list [here](https://github.com/instagrambot/instabot/blob/master/instabot/bot/bot.py#L86))
+bot = instabot.Bot()
+bot.login(username="xxx",password="xxx")
 
-<img src="https://user-images.githubusercontent.com/5613295/62396777-b5ab8600-b57c-11e9-90a7-56b7294a9a6a.png" width="400">
+pic_path = "media/pict.jpg"
+user_tags = [{'user_id': USER_ID, 'x': 0.5, 'y': 0.5}]
+caption = "some caption"
 
-If this library solved some of your problems, please consider [buying](https://www.buymeacoffee.com/okhlopkov) a coffee, sending some bucks to [PayPal](https://paypal.me/okhlopkov/10) or become our [patron](https://patreon.com/join/morejust). :wink:
-
-<a href="https://www.buymeacoffee.com/okhlopkov" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+bot.upload_photo(pic_path,caption=caption,user_tags=user_tags)
+```
 
 # Terms and conditions
 * You will NOT use this API for marketing purposes (spam, botting, harassment, massive bulk messaging...).
